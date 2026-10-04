@@ -25,13 +25,7 @@
   }
   document.addEventListener('click', (e) => {
     const a = e.target.closest('[data-cta]');
-    if (a) {
-      e.preventDefault();
-      const m = a.dataset.messenger === 'max' ? 'MAX' : 'Telegram';
-      showToast(`Прототип: здесь откроется бот в ${m} · метка ${a.dataset.cta}`);
-      closeMenu();
-      return;
-    }
+    if (a) { closeMenu(); return; } // ссылки на бота настоящие — уходим по href
     const d = e.target.closest('[data-doc]');
     if (d) { e.preventDefault(); showToast('Прототип: здесь будет ссылка на документ'); }
   });
