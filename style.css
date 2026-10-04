@@ -82,10 +82,8 @@ section{position:relative;padding-block:var(--sec)}
 .btn--sm svg{width:16px;height:16px}
 .btn--block{width:100%}
 .mi{width:20px;height:20px;flex:none}
-.mi--max{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:6px;background:currentColor;font-size:12px;font-weight:800;line-height:1}
-.btn--secondary .mi--max,.menu .mi--max{background:var(--ink);color:#fff}
-.btn--primary .mi--max,.btn--ghost-dark .mi--max{background:#fff;color:var(--indigo)}
-.btn--ghost-dark .mi--max{color:var(--night-8)}
+/* Логотип MAX — официальный ассет assets/max.svg (круглая эмблема), размер от .mi */
+.mi--max{display:block;border-radius:6px}
 
 /* ===== Header ===== */
 .header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
