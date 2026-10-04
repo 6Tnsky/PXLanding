@@ -232,7 +232,7 @@
     .from('.hero .eyebrow', { opacity: 0, y: 10, duration: 0.6 })
     .from('#heroTitle .w', { opacity: 0, yPercent: 40, duration: 0.8, stagger: 0.06 }, 0.1)
     .from('.hero__lead', { opacity: 0, y: 14, duration: 0.7 }, 0.45)
-    .from('.hero__btns > *', { opacity: 0, y: 14, duration: 0.6, stagger: 0.08 }, 0.6)
+    .fromTo('.hero__btns > *', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08 }, 0.6)
     .from('.hero__terms', { opacity: 0, duration: 0.6 }, 0.75)
     .from('#heroPhone', { opacity: 0, y: 40, rotate: -8, duration: 1.1, ease: 'power4.out' }, 0.35)
     .from('.marquee', { opacity: 0, duration: 0.8 }, 0.9);
@@ -553,7 +553,7 @@
         .to('#finalSignal', { scale: 2.4, opacity: 0, duration: 0.3 })
         .to('#finalBubble', { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'back.out(1.7)' }, '-=0.25')
         .fromTo('.final__lamp', { scale: 0.85, opacity: 0.6 }, { scale: 1.05, opacity: 1, duration: 1.6, ease: 'sine.inOut' }, '-=0.6')
-        .from('.final .btns > *, .final .caption', { opacity: 0, y: 12, duration: 0.5, stagger: 0.08 }, '-=1.2');
+        .fromTo('.final .btns > *, .final .caption', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08 }, '-=1.2');
     }
   });
 
