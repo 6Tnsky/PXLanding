@@ -725,3 +725,30 @@ section{position:relative;padding-block:var(--sec)}
 .pain__top{align-items:start}
 /* секции, которые заканчиваются итоговой строкой: без двойного воздуха */
 #pain,#message,#kid{padding-bottom:clamp(40px,4vw,64px)}
+
+/* ===== Страницы документов (оферта, политика) ===== */
+.doc-page{background:var(--canvas)}
+.doc-top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border-bottom:1px solid var(--line)}
+.doc-top__in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.doc-top__back{font-size:.9375rem;font-weight:550;color:var(--ink-2);white-space:nowrap}
+.doc-top__back:hover{color:var(--indigo)}
+.doc{padding:clamp(28px,4vw,56px) 0 clamp(48px,7vw,96px)}
+.doc__wrap{max-width:780px}
+.doc__title{font-size:clamp(1.75rem,1.2rem + 2.2vw,2.6rem);line-height:1.1;letter-spacing:-.02em}
+.doc__sub{margin-top:10px;font-size:var(--fs-lead);color:var(--ink-2)}
+.doc__meta{margin-top:14px;font-size:var(--fs-cap);color:var(--ink-3)}
+.doc__toc{margin-top:clamp(24px,4vw,40px);padding:clamp(18px,3vw,28px);border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);box-shadow:var(--sh-1)}
+.doc__toc-h{font-weight:650}
+.doc__toc ol{margin-top:10px;padding-left:1.3em;display:grid;gap:7px}
+.doc__toc a{color:var(--ink-2);font-size:.9375rem}
+.doc__toc a:hover{color:var(--indigo)}
+.doc__body{margin-top:clamp(28px,4vw,48px)}
+.doc__body h2{margin-top:clamp(32px,4vw,48px);padding-top:clamp(18px,3vw,30px);border-top:1px solid var(--line);font-size:var(--fs-h3);letter-spacing:-.01em;scroll-margin-top:84px}
+.doc__body h2:first-child{margin-top:0;padding-top:0;border-top:0}
+.doc__body p{margin-top:12px;color:var(--ink-2);line-height:1.65}
+.doc__body ul{margin-top:12px;padding-left:1.25em;display:grid;gap:8px;color:var(--ink-2)}
+.doc__body li{line-height:1.6}
+.doc__body b{color:var(--ink)}
+.doc__body a{color:var(--indigo);text-decoration:underline;text-decoration-color:rgba(70,86,200,.32);text-underline-offset:2px}
+.doc__foot{margin-top:clamp(32px,5vw,56px);padding-top:24px;border-top:1px solid var(--line);font-weight:550}
+
