@@ -826,5 +826,37 @@
 })();
 
 
-</script></body>
+</script>
+
+<!-- Метка кампании: utm_campaign → параметр start у кнопок Telegram и MAX -->
+<script>
+(function () {
+  var KEY = 'ad_label_first';
+
+  function stored() { try { return sessionStorage.getItem(KEY) || ''; } catch (e) { return ''; } }
+  function save(v) { try { sessionStorage.setItem(KEY, v); } catch (e) {} }
+
+  // метка из адреса; первое касание в сессии важнее повторных переходов
+  var fromUrl = '';
+  try { fromUrl = new URLSearchParams(location.search).get('utm_campaign') || ''; } catch (e) {}
+  var raw = stored() || fromUrl;
+  if (fromUrl && !stored()) save(fromUrl);
+
+  // латиница в нижнем регистре, цифры, _ и - ; не длиннее 64 символов (лимит Telegram, для MAX тоже подходит)
+  var label = String(raw).toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 64) || 'landing';
+
+  function apply() {
+    document.querySelectorAll('a[data-messenger]').forEach(function (a) {
+      var url;
+      try { url = new URL(a.getAttribute('href'), location.origin); } catch (e) { return; }
+      url.searchParams.set('start', label);
+      a.setAttribute('href', url.toString());
+    });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply);
+  else apply();
+})();
+</script>
+</body>
 </html>
